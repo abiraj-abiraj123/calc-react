@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calc-react
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: calc-react
+  template:
+    metadata:
+      labels:
+        app: calc-react
+    spec:
+      containers:
+      - name: calc-react
+        image: your-dockerhub-username/calc-react:latest  # Update with your DockerHub username
+        ports:
+        - containerPort: 80
